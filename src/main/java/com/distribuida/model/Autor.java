@@ -1,20 +1,28 @@
 package com.distribuida.model;
 
+import jakarta.persistence.*;
 import org.hibernate.mapping.List;
 
 import java.time.LocalDate;
 
-
-
+@Entity
+@Table(name = "autor")
 public class Autor {
 
     // Atributos (Variables de instancia)
+    @Id
+    @GeneratedValue
+    @Column(name = "id_autor")
     private Long idAutor;
+    @Column(name = "nombre")
     private String nombre;
+    @Column (name = "apellido")
     private String apellido;
+    @Column (name = "nacionalida")
     private String nacionalidad;
+    @Column (name = "fechaNacimiento")
     private LocalDate fechaNacimiento;
-    private String biografia;
+    @Column (name = "librosPublicos")
     private List librosPublicados; // Simplificado aquí como String, o podría ser una clase 'Libro'
 
     // Constructor vacío (necesario para muchos frameworks como Spring o Hibernate)
