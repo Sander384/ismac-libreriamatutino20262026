@@ -18,7 +18,7 @@ public class ClienteServiceImpl implements ClienteService{
 
     @Override
     public List<Cliente> findAll() {
-        return List.of();
+        return clienteDAO.findAll();
     }
 
     @Override

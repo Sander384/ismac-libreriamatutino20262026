@@ -53,8 +53,8 @@ public class ClienteTestintegracion {
 
     @Test
     public void update(){
-        Optional<Cliente> cliente = clienteDAO.findById(44);
-        assertTrue(cliente.isPresent(),"El cliente con i=44 debe de existir para ser actualizado");
+        Optional<Cliente> cliente = clienteDAO.findById(46);
+        assertTrue(cliente.isPresent(),"El cliente con i=46 debe de existir para ser actualizado");
 
         cliente.orElse(null).setCedula("1701233334");
         cliente.orElse(null).setNombre("Juan4");
@@ -72,9 +72,9 @@ public class ClienteTestintegracion {
 
     @Test
     public void delete(){
-        if(clienteDAO.existsById(44)){
-            clienteDAO.deleteById(44);
+        if(clienteDAO.existsById(46)){
+            clienteDAO.deleteById(46);
         }
-        assertFalse(clienteDAO.existsById(44),"El id=44 debería haberse eliminado");
+        assertFalse(clienteDAO.existsById(46),"El id=44 debería haberse eliminado");
     }
 }
